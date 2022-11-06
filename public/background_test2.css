@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    font: 400 16px 'Montserrat', sans-serif;
+    text-align: center;
+    overflow: hidden;
+    position: relative; /*더한것 */
+}
+
+.day {
+    background-color: #42a3e9;
+}
+
+.Sunset {
+    background-color: #e7ab50;
+}
+
+.night {
+    background-color: #1d1d3f;
+}
+
+#circle {
+    display: inline-block;
+    border-radius: 50%;
+    z-index: 1;
+    width: 400px;
+    height: 400px;
+}
+
+#timeDisplay {
+    color: #f3f3f3;
+    margin-top: 1em;
+}
+
+
+.cloud {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 5px #0000001a;
+    z-index: 2;
+    animation: slide 60s linear infinite;
+}
+
+.cloud::after, .cloud::before {
+    position: absolute;
+    background: #ffffff;
+	content: '';
+	z-index: -1;
+}
+
+.x1 {
+    top: 15%;
+    left: 10%;
+    border-radius: 100px;
+    width: 350px;
+    height: 120px;
+}
+
+.x1::after {
+    top: -50px;
+	left: 50px;
+    border-radius: 100px;
+	width: 100px;
+    height: 100px;
+}
+
+.x1::before {
+    top: -90px;
+	right: 50px;
+    border-radius: 200px;
+	width: 180px;
+    height: 180px;
+}
+
+.x2 {
+    top: 35%;
+    left: 75%;
+    border-radius: 150px;
+    width: 275px;
+    height: 100px;
+}
+
+.x2::after {
+    top: -90px;
+	right: 30px;
+    border-radius: 150px;
+	width: 150px;
+    height: 150px;
+}
+
+.x2::before {
+    top: -60px;
+	left: 30px;
+    border-radius: 100px;
+	width: 150px;
+    height: 150px;
+}
+
+.x3 {
+    top: 55%;
+    left: 40%;
+    border-radius: 100px;
+    width: 350px;
+    height: 120px;
+}
+
+.x3::after {
+    top: -50px;
+	left: 50px;
+    border-radius: 100px;
+	width: 100px;
+    height: 100px;
+}
+
+.x3::before {
+    top: -90px;
+	right: 50px;
+    border-radius: 200px;
+	width: 180px;
+    height: 180px;
+}
+
+.star {
+    display: inline-block;
+    position: absolute;
+    background-color: #ffffffd7;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    z-index: -1;
+    animation: twinkle 3s linear infinite;
+}
+
+@media screen and (max-width: 426px) {
+    .circle {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sun {
+        box-shadow: 0 0 50px #ffff98b4;
+    }
+
+    .circle--moon {
+        box-shadow: 0 0 50px #757575b4;
+    }
+
+    #timeDisplay {
+        font-size: 1rem;
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        height: 2px;
+        width: 2px;
+    } 50% {
+        height: 3px;
+        width: 3px;
+    } 100% {
+        height: 2px;
+        width: 2px;
+    }
+}
+
+@keyframes slide {
+    0% {
+        margin-left: -2000px;
+    } 100% {
+        margin-left: 100%;
+    }
+}
